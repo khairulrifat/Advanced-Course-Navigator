@@ -1,6 +1,6 @@
 ## Introduction
 
-The Course Filter Application was developed to address a critical need among students at Bennington College, where searching for courses to match specific interests, schedules, and academic requirements can be time-consuming. Recognizing the challenges students face in sifting through hundreds of course options,me and my friend Abraar Arpon set out to create a streamlined solution that allows students to filter and search courses based on multiple parameters.
+The Course Filter Application was developed to address a critical need among students at Bennington College, where searching for courses to match specific interests, schedules, and academic requirements can be time-consuming. Recognizing the challenges students face in shifting through hundreds of course options,me and my friend Abraar Arpon set out to create a streamlined solution that allows students to filter and search courses based on multiple parameters.
 
 The project concept was initiated by Tanvir Anjum who had feedbacks from students and academic advisors, and identified a gap in quickly locating courses that met personalized criteria. Our goal was to reduce the time students spend on course selection, and we achieved this with a powerful filtering system that will serve over 900 students effectively.
 
@@ -79,6 +79,5 @@ A web-based tool designed to help users filter and search for courses based on m
 * **Improved Filtering Logic**: Additional logic to handle more complex keyword combinations.  
 * **Additional Fields**: Adding more fields to the display table for better user insights.  
 * **Enhanced Responsiveness**: Optimizing the layout for smaller screens and mobile devices.  
-* 
-
+  
 
