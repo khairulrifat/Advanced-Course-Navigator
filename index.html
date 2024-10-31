@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Filter</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load PapaParse -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Courses with ...</h1>
+        <form id="filter-form">
+            <!-- Keyword Search Section -->
+            <div class="filter-section">
+                <div class="filter-row">
+                    <label>All these words:</label>
+                    <input type="text" name="allWords" placeholder="Enter keywords">
+                </div>
+                <div class="filter-row">
+                    <label>This exact word or phrase:</label>
+                    <input type="text" name="exactPhrase" placeholder="Enter exact phrase">
+                </div>
+                <div class="filter-row">
+                    <label>Any of these words:</label>
+                    <input type="text" name="anyWords" placeholder="Enter any word">
+                </div>
+                <div class="filter-row">
+                    <label>None of these words:</label>
+                    <input type="text" name="noneWords" placeholder="Enter words to exclude">
+                </div>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filter-section">
+                <div class="filter-row">
+                    <label for="deliveryMethod">Delivery Method:</label>
+                    <select id="deliveryMethod" name="deliveryMethod">
+                        <option value="">Select</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="In Person">In Person</option>
+                        <option value="Remote">Remote</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="areaOfStudy">Area of Study:</label>
+                    <select id="areaOfStudy" name="areaOfStudy" onchange="populateSubCategories()">
+                        <option value="">Select Area of Study</option>
+                        <option value="CAPA">CAPA</option>
+                        <option value="Black Studies">Black Studies</option>
+                        <option value="Cultural Studies and Languages">Cultural Studies and Languages</option>
+                        <option value="Dance">Dance</option>
+                        <option value="Dance (BFA)">Dance (BFA)</option>
+                        <option value="Dance (MFA)">Dance (MFA)</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Education">Education</option>
+                        <option value="Environment">Environment</option>
+                        <option value="Literature">Literature</option>
+                        <option value="Music">Music</option>
+                        <option value="Science and Mathematics">Science and Mathematics</option>
+                        <option value="Society Culture and Thought">Society Culture and Thought</option>
+                        <option value="Visual Arts">Visual Arts</option>
+                        <option value="Writing">Writing</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="subCategory">Subcategory:</label>
+                    <select id="subCategory" name="subCategory">
+                        <option value="">Select Subcategory</option>
+                        <!-- Subcategories will be populated dynamically based on Area of Study selection -->
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="credits">Credits:</label>
+                    <select id="credits" name="credits">
+                        <option value="">Select Credits</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="level">Course Level:</label>
+                    <select id="level" name="level">
+                        <option value="">Select Level</option>
+                        <option value="2000">2000</option>
+                        <option value="4000">4000</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="session">3 and 7 Week Classes:</label>
+                    <select id="session" name="session">
+                        <option value="">Select Session</option>
+                        <option value="1st 7 Week">1st 7 Week</option>
+                        <option value="2nd 7 Week">2nd 7 Week</option>
+                        <option value="1st Module Block">1st Module Block</option>
+                        <option value="2nd Module Block">2nd Module Block</option>
+                        <option value="3rd Module Block">3rd Module Block</option>
+                        <option value="4th Module Block">4th Module Block</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button type="button" onclick="applyFilters()">Search Courses</button>
+                <button type="button" onclick="clearResults()">Clear Search</button>
+            </div>
+        </form>
+        
+        <h2>Results</h2>
+        <!-- Scrollable Results Container -->
+        <div id="results-container">
+            <div id="results"></div>
+        </div>
+    </div>
+</body>
+</html>
